@@ -14,6 +14,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     shippingPrice,
     totalPrice,
     dateFind,
+    note,
   } = req.body;
 
   const order = await Order.create({
@@ -25,6 +26,7 @@ exports.newOrder = catchAsyncErrors(async (req, res, next) => {
     shippingPrice,
     totalPrice,
     dateFind,
+    note,
     paidAt: Date.now(),
     user: req.user._id,
     userName: req.user.name,
